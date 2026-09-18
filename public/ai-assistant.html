@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-store-name>AI Shopping Assistant — Matgari</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      /* AI Assistant Chat Page Styles */
+
+      .ai-chat-page {
+        padding: var(--space-24, 24px) 0 var(--space-48, 48px);
+      }
+
+      /* ---------- Page Header ---------- */
+      .ai-chat-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: var(--space-16, 16px);
+      }
+
+      .ai-chat-avatar {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        background: var(--primary, #123c4a);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+
+      .ai-chat-title {
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 1.3;
+      }
+
+      .ai-chat-subtitle {
+        font-size: 13px;
+        color: var(--text-secondary, #667);
+        margin-top: 2px;
+      }
+
+      /* ---------- Chat Window ---------- */
+      .ai-chat-window {
+        max-width: 860px;
+        margin: 0 auto;
+        background: #fff;
+        border: 1px solid var(--border, #e3e6ea);
+        border-radius: var(--radius-lg, 16px);
+        box-shadow: var(--shadow-sm, 0 2px 10px rgba(16, 24, 40, 0.06));
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 250px);
+        min-height: 520px;
+        overflow: hidden;
+      }
+
+      .ai-chat-bar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px var(--space-20, 20px);
+        border-bottom: 1px solid var(--border-light, #eef1f4);
+        background: var(--surface, #fafbfc);
+      }
+
+      .ai-chat-bar-avatar {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--primary, #123c4a);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+
+      .ai-chat-bar-name {
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .ai-chat-bar-status {
+        font-size: 12px;
+        color: var(--text-secondary, #667);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 1px;
+      }
+
+      .ai-status-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #22a06b;
+      }
+
+      .ai-chat-clear {
+        margin-inline-start: auto;
+        border: 1px solid var(--border, #e3e6ea);
+        background: #fff;
+        color: var(--text-secondary, #667);
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: color 150ms ease, border-color 150ms ease;
+      }
+
+      .ai-chat-clear:hover {
+        color: var(--text-primary, #101828);
+        border-color: var(--border-dark, #cfd5dc);
+      }
+
+      /* ---------- Messages ---------- */
+      .ai-chat-messages {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: var(--space-20, 20px);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16, 16px);
+        background:
+          radial-gradient(circle at 1px 1px, rgba(16, 24, 40, 0.05) 1px, transparent 0) 0 0 / 22px 22px;
+      }
+
+      .ai-msg-user {
+        align-self: flex-end;
+        max-width: 80%;
+        background: var(--accent-light, #fdf3dd);
+        border: 1px solid #f5dfae;
+        color: var(--text-primary, #101828);
+        border-radius: 16px 16px 4px 16px;
+        padding: 10px 16px;
+        font-size: 14px;
+        line-height: 1.6;
+        white-space: pre-line;
+      }
+
+      .ai-msg-assistant-wrap {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        max-width: 92%;
+      }
+
+      .ai-msg-assistant-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--primary, #123c4a);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .ai-msg-assistant-body {
+        min-width: 0;
+        flex: 1;
+      }
+
+      .ai-msg-assistant {
+        background: var(--surface, #f6f7f9);
+        border: 1px solid var(--border-light, #eef1f4);
+        color: var(--text-primary, #101828);
+        border-radius: 16px 16px 16px 4px;
+        padding: 10px 16px;
+        font-size: 14px;
+        line-height: 1.7;
+        white-space: pre-line;
+      }
+
+      /* ---------- Product Cards inside Message ---------- */
+      .ai-products {
+        position: relative;
+        margin-top: 10px;
+      }
+
+      .ai-products-track {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x proximity;
+        padding: 4px 2px 10px;
+        scrollbar-width: thin;
+      }
+
+      .ai-products-track::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .ai-products-track::-webkit-scrollbar-thumb {
+        background: var(--border-dark, #cfd5dc);
+        border-radius: 999px;
+      }
+
+      .ai-product-card {
+        position: relative;
+        flex: 0 0 214px;
+        scroll-snap-align: start;
+        background: #fff;
+        border: 1px solid var(--border, #e3e6ea);
+        border-radius: 14px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: border-color 150ms ease, box-shadow 150ms ease;
+      }
+
+      .ai-product-card:hover,
+      .ai-product-card:focus-within {
+        border-color: var(--border-dark, #cfd5dc);
+        box-shadow: var(--shadow-sm, 0 4px 14px rgba(16, 24, 40, 0.08));
+      }
+
+      .ai-product-media {
+        display: block;
+        aspect-ratio: 1 / 1;
+        background: var(--surface, #f6f7f9);
+        padding: 14px;
+      }
+
+      .ai-product-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .ai-product-add {
+        position: absolute;
+        inset-block-start: 10px;
+        inset-inline-end: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid var(--border, #e3e6ea);
+        background: #fff;
+        color: var(--text-primary, #101828);
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 150ms ease, color 150ms ease;
+      }
+
+      .ai-product-add:hover {
+        background: var(--primary, #123c4a);
+        color: #fff;
+      }
+
+      .ai-product-add:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+
+      .ai-product-body {
+        padding: 10px 12px 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
+      }
+
+      .ai-product-name {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.5;
+        color: var(--text-primary, #101828);
+        text-decoration: none;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .ai-product-name:hover {
+        color: var(--link, #17697c);
+      }
+
+      .ai-product-section {
+        font-size: 12px;
+        color: var(--text-secondary, #667);
+      }
+
+      .ai-product-price-row {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .ai-product-price {
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--text-primary, #101828);
+      }
+
+      .ai-product-old-price {
+        font-size: 12px;
+        color: var(--text-secondary, #667);
+        text-decoration: line-through;
+      }
+
+      .ai-product-discount {
+        font-size: 12px;
+        font-weight: 700;
+        color: #fff;
+        background: #2e9e5b;
+        border-radius: 6px;
+        padding: 2px 7px;
+      }
+
+      .ai-product-out {
+        font-size: 12px;
+        font-weight: 700;
+        color: #b42318;
+      }
+
+      .ai-products-nav {
+        position: absolute;
+        top: 42%;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid var(--border, #e3e6ea);
+        background: #fff;
+        color: var(--text-primary, #101828);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: var(--shadow-sm, 0 2px 10px rgba(16, 24, 40, 0.1));
+        z-index: 2;
+      }
+
+      .ai-products-nav[hidden] {
+        display: none;
+      }
+
+      .ai-products-nav.prev { inset-inline-start: -6px; }
+      .ai-products-nav.next { inset-inline-end: -6px; }
+
+      /* ---------- Quick Suggestions ---------- */
+      .ai-chat-suggestions {
+        padding: var(--space-12, 12px) var(--space-20, 20px) 0;
+        display: flex;
+        gap: var(--space-8, 8px);
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      .ai-chat-suggestions::-webkit-scrollbar { display: none; }
+
+      .ai-suggestion-chip {
+        white-space: nowrap;
+        border: 1px solid var(--border, #e3e6ea);
+        background: #fff;
+        color: var(--text-secondary, #667);
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 7px 14px;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease;
+      }
+
+      .ai-suggestion-chip:hover {
+        border-color: var(--link, #17697c);
+        color: var(--link, #17697c);
+        background-color: #f0f8f9;
+      }
+
+      /* ---------- Input Form ---------- */
+      .ai-chat-form {
+        border-top: 1px solid var(--border-light, #eef1f4);
+        padding: var(--space-12, 12px) var(--space-16, 16px);
+        display: flex;
+        align-items: flex-end;
+        gap: var(--space-8, 8px);
+      }
+
+      .ai-chat-input {
+        flex: 1;
+        resize: none;
+        max-height: 120px;
+        border: 1px solid var(--border-dark, #cfd5dc);
+        border-radius: var(--radius-md, 12px);
+        padding: 11px 14px;
+        font-size: 14px;
+        font-family: inherit;
+        color: var(--text-primary, #101828);
+        background: var(--surface, #f6f7f9);
+        transition: border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+      }
+
+      .ai-chat-input:focus {
+        outline: none;
+        border-color: var(--accent, #e8b84b);
+        box-shadow: var(--focus-ring, 0 0 0 3px rgba(232, 184, 75, 0.25));
+        background: #fff;
+      }
+
+      .ai-chat-input:disabled { opacity: 0.6; }
+
+      .ai-chat-send-btn {
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        border: none;
+        border-radius: 50%;
+        background: var(--accent, #e8b84b);
+        color: var(--text-primary, #101828);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 150ms ease, transform 150ms ease;
+      }
+
+      .ai-chat-send-btn:hover:not(:disabled) {
+        background-color: var(--accent-hover, #d9a833);
+        transform: translateY(-1px);
+      }
+
+      .ai-chat-send-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      /* ---------- Typing Indicator ---------- */
+      @keyframes aiBounceDot {
+        0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+        40% { transform: translateY(-4px); opacity: 1; }
+      }
+
+      .ai-typing-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--text-secondary, #667);
+        display: inline-block;
+        animation: aiBounceDot 1.2s infinite;
+      }
+
+      .ai-typing-dot:nth-child(2) { animation-delay: 0.15s; }
+      .ai-typing-dot:nth-child(3) { animation-delay: 0.3s; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .ai-typing-dot { animation: none; }
+        .ai-products-track { scroll-behavior: auto; }
+      }
+
+      @media (max-width: 767px) {
+        .ai-chat-window {
+          height: calc(100vh - 210px);
+          border-radius: var(--radius-md, 12px);
+        }
+        .ai-product-card { flex-basis: 168px; }
+        .ai-products-nav { display: none; }
+        .ai-msg-assistant-wrap { max-width: 100%; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Global Header -->
+    <header data-site-header></header>
+
+    <main class="container ai-chat-page">
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumbs" style="padding: 0 0 12px; font-size: 13px; color: var(--text-secondary);">
+        <a href="/index.html">Home</a>
+        <span style="margin: 0 6px;">›</span>
+        <strong style="color: var(--text-primary);">AI Assistant</strong>
+      </nav>
+
+      <div class="ai-chat-header">
+        <div class="ai-chat-avatar"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
+        <div>
+          <h1 class="ai-chat-title">AI Shopping Assistant</h1>
+          <p class="ai-chat-subtitle">Ask about any product, price, or category, and get instant recommendations with photos and prices.</p>
+        </div>
+      </div>
+
+      <div class="ai-chat-window">
+        <div class="ai-chat-bar">
+          <div class="ai-chat-bar-avatar"><i class="fa-solid fa-headset" aria-hidden="true"></i></div>
+          <div>
+            <div class="ai-chat-bar-name">Store Assistant</div>
+            <div class="ai-chat-bar-status"><span class="ai-status-dot"></span> Replies in seconds</div>
+          </div>
+          <button type="button" id="chat-clear" class="ai-chat-clear">New Chat</button>
+        </div>
+
+        <div id="chat-messages" class="ai-chat-messages">
+          <!-- Welcome Message -->
+          <div class="ai-msg-assistant-wrap">
+            <div class="ai-msg-assistant-avatar"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
+            <div class="ai-msg-assistant-body">
+              <div class="ai-msg-assistant">
+                Hello! I can help you find the right product, compare prices, or guide you through any category in the store. What are you looking for today?
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Suggestions -->
+        <div id="chat-suggestions" class="ai-chat-suggestions">
+          <button type="button" class="ai-suggestion-chip">What are the current deals and discounts?</button>
+          <button type="button" class="ai-suggestion-chip">What shopping categories do you have?</button>
+          <button type="button" class="ai-suggestion-chip">Recommend a product under 500 EGP</button>
+        </div>
+
+        <!-- Input Form -->
+        <form id="chat-form" class="ai-chat-form">
+          <textarea
+            id="chat-input"
+            rows="1"
+            maxlength="800"
+            placeholder="Type your message here..."
+            class="ai-chat-input"
+            aria-label="Type your message for the AI assistant"
+          ></textarea>
+          <button id="chat-send-btn" type="submit" class="ai-chat-send-btn" aria-label="Send message">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer data-site-footer></footer>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/js/pages/ai-assistant.page.js"></script>
+  </body>
+</html>

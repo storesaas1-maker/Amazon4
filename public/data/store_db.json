@@ -1,0 +1,417 @@
+{
+  "storeSettings": {
+    "store_name": "Matgari Store",
+    "store_description": "Your premier destination for online shopping — electronics, kitchen and home appliances, fashion, essentials, and more with the best prices and express delivery",
+    "store_phone": "+201012345678",
+    "store_whatsApp_number": "+201012345678",
+    "store_GPS": "https://maps.google.com",
+    "store_design": {
+      "primary_color": "#131921",
+      "secondary_color": "#FF9900",
+      "background_color": "#FFFFFF",
+      "text_color": "#111111",
+      "font_family": "Inter, Arial, Helvetica, sans-serif",
+      "banner_text": "Major discounts and exclusive offers across all departments with fast free shipping"
+    }
+  },
+  "sections": [
+    {
+      "_id": "sec_1",
+      "name": "Home & Kitchen Appliances"
+    },
+    {
+      "_id": "sec_2",
+      "name": "Electronics & Smart Devices"
+    },
+    {
+      "_id": "sec_3",
+      "name": "Phones & Accessories"
+    },
+    {
+      "_id": "sec_4",
+      "name": "Fashion, Apparel & Shoes"
+    },
+    {
+      "_id": "sec_5",
+      "name": "Perfumes & Personal Care"
+    },
+    {
+      "_id": "sec_6",
+      "name": "Home Decor & Living"
+    }
+  ],
+  "products": [
+    {
+      "_id": "prod_1",
+      "name": "Smart 4-Door No-Frost Refrigerator 480L with Touch Display",
+      "description": "Advanced dual-cooling system with Inverter energy saving, digital temperature touch screen, tempered glass shelves, and 10-year motor warranty.",
+      "price": 42000,
+      "discount": 15,
+      "final_price": 35700,
+      "image": "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&auto=format&fit=crop&q=80",
+      "quantity": 8,
+      "section": {
+        "_id": "sec_1",
+        "name": "Home & Kitchen Appliances"
+      }
+    },
+    {
+      "_id": "prod_2",
+      "name": "65-Inch 4K Ultra HD OLED Smart Android TV",
+      "description": "Cinematic OLED display featuring Dolby Vision, Dolby Atmos, 120Hz refresh rate, immersive surround sound, voice-controlled remote, and built-in streaming apps.",
+      "price": 34500,
+      "discount": 10,
+      "final_price": 31050,
+      "image": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&auto=format&fit=crop&q=80",
+      "quantity": 6,
+      "section": {
+        "_id": "sec_2",
+        "name": "Electronics & Smart Devices"
+      }
+    },
+    {
+      "_id": "prod_3",
+      "name": "Digital Air Fryer 7L Oil-Free with 10 Smart Presets",
+      "description": "Healthy cooking with 85% less oil. Full-color touch interface with presets for frying, baking, roasting, and dishwasher-safe non-stick basket.",
+      "price": 5800,
+      "discount": 20,
+      "final_price": 4640,
+      "image": "https://images.unsplash.com/photo-1585659722983-3a675dabf23d?w=600&auto=format&fit=crop&q=80",
+      "quantity": 15,
+      "section": {
+        "_id": "sec_1",
+        "name": "Home & Kitchen Appliances"
+      }
+    },
+    {
+      "_id": "prod_4",
+      "name": "15-Bar Automatic Espresso and Cappuccino Coffee Maker",
+      "description": "Authentic 15-bar Italian pressure pump, professional steam wand for silky microfoam latte and cappuccino, 1.5L removable reservoir, and durable stainless steel body.",
+      "price": 18900,
+      "discount": 0,
+      "final_price": 18900,
+      "image": "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80",
+      "quantity": 10,
+      "section": {
+        "_id": "sec_1",
+        "name": "Home & Kitchen Appliances"
+      }
+    },
+    {
+      "_id": "prod_5",
+      "name": "Smart Robot Vacuum & Mop with LiDAR Laser Navigation",
+      "description": "4000Pa powerhouse suction, electronic controlled mopping tank, high-precision obstacle avoidance, and comprehensive smartphone app controls.",
+      "price": 14500,
+      "discount": 12,
+      "final_price": 12760,
+      "image": "https://images.unsplash.com/photo-1610492461128-4bc2794c4897?w=600&auto=format&fit=crop&q=80",
+      "quantity": 7,
+      "section": {
+        "_id": "sec_1",
+        "name": "Home & Kitchen Appliances"
+      }
+    },
+    {
+      "_id": "prod_6",
+      "name": "Ultra-Slim Lightweight Laptop Core i7 16GB RAM 512GB SSD",
+      "description": "1.2kg lightweight aluminum chassis, ultra-fast multi-tasking processor for work and design, up to 14-hour battery life, and vivid bezel-less IPS display.",
+      "price": 38000,
+      "discount": 8,
+      "final_price": 34960,
+      "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=80",
+      "quantity": 5,
+      "section": {
+        "_id": "sec_2",
+        "name": "Electronics & Smart Devices"
+      }
+    },
+    {
+      "_id": "prod_7",
+      "name": "Pro Wireless Over-Ear Headphones with Hybrid Active Noise Cancellation",
+      "description": "Hi-Res certified audio, immersive hybrid active noise cancellation, memory-foam ear cushions for all-day comfort, and crystal-clear voice microphones.",
+      "price": 8500,
+      "discount": 15,
+      "final_price": 7225,
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",
+      "quantity": 12,
+      "section": {
+        "_id": "sec_2",
+        "name": "Electronics & Smart Devices"
+      }
+    },
+    {
+      "_id": "prod_8",
+      "name": "Flagship Smartphone 256GB 200MP Camera 120Hz AMOLED Display",
+      "description": "Top-tier gaming processor, ultra-bright sunlight display, 100W lightning charging, and full IP68 water and dust resistance.",
+      "price": 32000,
+      "discount": 10,
+      "final_price": 28800,
+      "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop&q=80",
+      "quantity": 9,
+      "section": {
+        "_id": "sec_3",
+        "name": "Phones & Accessories"
+      }
+    },
+    {
+      "_id": "prod_9",
+      "name": "Waterproof Smart Fitness & Health Watch with AMOLED Screen",
+      "description": "Precision optical heart rate and SpO2 tracking, sleep analysis, 10-day battery endurance, and breathable interchangeable silicone strap.",
+      "price": 7200,
+      "discount": 0,
+      "final_price": 7200,
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80",
+      "quantity": 14,
+      "section": {
+        "_id": "sec_3",
+        "name": "Phones & Accessories"
+      }
+    },
+    {
+      "_id": "prod_10",
+      "name": "Shock-Absorbing Lightweight Running & Athletic Shoes",
+      "description": "Cushioned shock-absorbing rubber outsole, breathable engineered mesh upper, and contemporary ergonomic styling for everyday comfort and high-intensity workouts.",
+      "price": 3400,
+      "discount": 25,
+      "final_price": 2550,
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=80",
+      "quantity": 20,
+      "section": {
+        "_id": "sec_4",
+        "name": "Fashion, Apparel & Shoes"
+      }
+    },
+    {
+      "_id": "prod_11",
+      "name": "Water-Resistant Urban Travel Backpack with USB Port & Lock",
+      "description": "Multiple organized compartments fitting up to 15.6-inch laptops, scratch-resistant and weather-resistant fabric, designed for business, campus, and travel.",
+      "price": 1850,
+      "discount": 0,
+      "final_price": 1850,
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&auto=format&fit=crop&q=80",
+      "quantity": 18,
+      "section": {
+        "_id": "sec_4",
+        "name": "Fashion, Apparel & Shoes"
+      }
+    },
+    {
+      "_id": "prod_12",
+      "name": "Luxury French Unisex Eau de Parfum 100ml Long-Lasting",
+      "description": "Captivating blend of royal oud, warm amber, zesty bergamot, and delicate vanilla notes. Presented in an exquisite gift-ready bottle.",
+      "price": 2900,
+      "discount": 18,
+      "final_price": 2378,
+      "image": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=600&auto=format&fit=crop&q=80",
+      "quantity": 11,
+      "section": {
+        "_id": "sec_5",
+        "name": "Perfumes & Personal Care"
+      }
+    },
+    {
+      "_id": "prod_13",
+      "name": "Professional High-Speed 1200W Blender with Glass Jar & Grinder",
+      "description": "6-blade stainless steel ice crushing blades for smoothies, soups, and purees in seconds. 5-speed pulse control and non-slip suction base.",
+      "price": 3600,
+      "discount": 10,
+      "final_price": 3240,
+      "image": "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=600&auto=format&fit=crop&q=80",
+      "quantity": 13,
+      "section": {
+        "_id": "sec_1",
+        "name": "Home & Kitchen Appliances"
+      }
+    },
+    {
+      "_id": "prod_14",
+      "name": "32L Digital Microwave and Grill with Quick Defrost",
+      "description": "1000W rapid grill and cook system, antibacterial easy-clean ceramic cavity, weight-based auto defrost, and child safety lock.",
+      "price": 6900,
+      "discount": 0,
+      "final_price": 6900,
+      "image": "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=600&auto=format&fit=crop&q=80",
+      "quantity": 8,
+      "section": {
+        "_id": "sec_1",
+        "name": "Home & Kitchen Appliances"
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "_id": "rev_1789142751325",
+      "product_id": "prod_1",
+      "user_name": "Ali Mahmoud",
+      "rating": 5,
+      "content": "Outstanding product, excellent build quality, and very fast delivery.",
+      "created_at": "2026-09-11T16:05:51.325Z"
+    },
+    {
+      "_id": "rev_1",
+      "product_id": "prod_1",
+      "user_name": "Tarek Abdullah",
+      "rating": 5,
+      "content": "The refrigerator is superb, whisper quiet, and very efficient. The touch screen is very practical and delivery was prompt.",
+      "created_at": "2026-09-06T15:58:58.207Z"
+    },
+    {
+      "_id": "rev_2",
+      "product_id": "prod_2",
+      "user_name": "Sarah Ibrahim",
+      "rating": 5,
+      "content": "The OLED colors are breathtaking and the sound quality is incredible. A true home theater experience; highly recommended.",
+      "created_at": "2026-09-07T15:58:58.207Z"
+    },
+    {
+      "_id": "rev_3",
+      "product_id": "prod_3",
+      "user_name": "Mahmoud Fahmy",
+      "rating": 5,
+      "content": "This air fryer made healthy oil-free meals so simple. It heats up quickly and the 7-liter capacity is generous for the whole family.",
+      "created_at": "2026-09-08T15:58:58.207Z"
+    },
+    {
+      "_id": "rev_4",
+      "product_id": "prod_4",
+      "user_name": "Yaseen Al-Najjar",
+      "rating": 4,
+      "content": "Fantastic espresso machine, rich crema extraction and great steam pressure for milk frothing.",
+      "created_at": "2026-09-09T15:58:58.207Z"
+    },
+    {
+      "_id": "rev_5",
+      "product_id": "prod_5",
+      "user_name": "Mona Al-Sharif",
+      "rating": 5,
+      "content": "The robot vacuum mapped the entire apartment effortlessly. The mopping feature leaves floors spotless and shipping was fast.",
+      "created_at": "2026-09-08T15:58:58.207Z"
+    },
+    {
+      "_id": "rev_6",
+      "product_id": "prod_6",
+      "user_name": "Omar Khaled",
+      "rating": 5,
+      "content": "Incredibly thin and powerful laptop with great all-day battery endurance and a very crisp display.",
+      "created_at": "2026-09-09T15:58:58.207Z"
+    },
+    {
+      "_id": "rev_7",
+      "product_id": "prod_7",
+      "user_name": "Rania Mostafa",
+      "rating": 5,
+      "content": "The active noise cancellation is remarkable and audio clarity is top notch. Very comfortable for long work sessions.",
+      "created_at": "2026-09-10T15:58:58.207Z"
+    },
+    {
+      "_id": "rev_8",
+      "product_id": "prod_8",
+      "user_name": "Khaled Al-Saeed",
+      "rating": 4,
+      "content": "The phone camera resolution is remarkable and the 120Hz display is super smooth.",
+      "created_at": "2026-09-07T15:58:58.207Z"
+    },
+    {
+      "_id": "rev_9",
+      "product_id": "prod_9",
+      "user_name": "Islam Zakaria",
+      "rating": 5,
+      "content": "Great smartwatch, highly accurate heart rate and sleep tracking, and battery easily lasts an entire week.",
+      "created_at": "2026-09-09T15:58:58.207Z"
+    },
+    {
+      "_id": "rev_10",
+      "product_id": "prod_10",
+      "user_name": "Karim Adel",
+      "rating": 5,
+      "content": "Extremely comfortable for long distance running, very lightweight and authentic materials.",
+      "created_at": "2026-09-05T15:58:58.207Z"
+    },
+    {
+      "_id": "rev_11",
+      "product_id": "prod_12",
+      "user_name": "Dina El-Husseini",
+      "rating": 5,
+      "content": "The perfume lasts for over 24 hours with elegant projection, arrived securely and beautifully packaged.",
+      "created_at": "2026-09-10T15:58:58.207Z"
+    },
+    {
+      "_id": "rev_12",
+      "product_id": "prod_13",
+      "user_name": "Sameh Hassan",
+      "rating": 5,
+      "content": "Powerful blender that crushes ice and frozen berries in seconds. The heavy glass jar is sturdy and well-made.",
+      "created_at": "2026-09-09T15:58:58.207Z"
+    }
+  ],
+  "coupons": [
+    {
+      "coupon_code": "MATGARI10",
+      "discount": 10,
+      "end_time": "2030-01-01T00:00:00.000Z"
+    },
+    {
+      "coupon_code": "RAM20",
+      "discount": 20,
+      "end_time": "2030-01-01T00:00:00.000Z"
+    }
+  ],
+  "users": [
+    {
+      "_id": "usr_super",
+      "name": "Super Admin",
+      "email": "admin@matgari.com",
+      "password": "password123",
+      "role": "super_admin"
+    },
+    {
+      "_id": "usr_customer",
+      "name": "Ahmed Mohamed",
+      "email": "user@matgari.com",
+      "password": "password123",
+      "role": "user"
+    }
+  ],
+  "orders": [
+    {
+      "_id": "ord_1",
+      "orderNumber": "ORD-7821",
+      "user_id": "usr_customer",
+      "user_name": "Ahmed Mohamed",
+      "user_email": "user@matgari.com",
+      "products": [
+        {
+          "id": "prod_1",
+          "_id": "prod_1",
+          "name": "Smart 4-Door No-Frost Refrigerator 480L with Touch Display",
+          "image": "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&auto=format&fit=crop&q=80",
+          "price": 35700,
+          "quantity": 1
+        }
+      ],
+      "total_price": 35700,
+      "status": "delivered",
+      "created_at": "2026-09-09T15:58:58.207Z"
+    },
+    {
+      "_id": "ord_2",
+      "orderNumber": "ORD-8942",
+      "user_id": "usr_customer",
+      "user_name": "Ahmed Mohamed",
+      "user_email": "user@matgari.com",
+      "products": [
+        {
+          "id": "prod_2",
+          "_id": "prod_2",
+          "name": "65-Inch 4K Ultra HD OLED Smart Android TV",
+          "image": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&auto=format&fit=crop&q=80",
+          "price": 31050,
+          "quantity": 1
+        }
+      ],
+      "total_price": 31050,
+      "status": "processing",
+      "created_at": "2026-09-10T15:58:58.207Z"
+    }
+  ]
+}

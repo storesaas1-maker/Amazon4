@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Super Admin Setup — Matgari</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <main class="container section">
+      <section class="panel" style="max-width: 520px; margin: auto">
+        <h1>Super Admin Setup</h1>
+        <p>This page is reserved for initializing the store's primary super administrator.</p>
+        <form id="setup-form" class="form-grid">
+          <label>Name<input class="input" name="name" required /></label
+          ><label
+            >Email Address<input
+              class="input"
+              type="email"
+              name="email"
+              required /></label
+          ><label
+            >Password<input
+              class="input"
+              type="password"
+              name="password"
+              minlength="8"
+              required /></label
+          ><button class="button">Create Super Admin Account</button>
+        </form>
+        <div id="existing-super-admin" hidden>
+          <p class="notice">A super admin already exists. No additional primary accounts can be created.</p>
+          <a class="button" href="/login.html">Sign In</a>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/js/pages/super-admin-setup.page.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sign In — Matgari</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/auth.css" />
+  </head>
+  <body>
+    <div class="auth-shell">
+      <a class="auth-brand-header" href="/index.html" id="auth-logo">
+        <i class="fa-solid fa-bag-shopping" style="color: #FF9900;"></i>
+        <span data-store-name>Matgari</span>
+        <span class="tld">.com</span>
+      </a>
+
+      <div class="auth-card" id="login-card">
+        <h2>Sign In</h2>
+        <p class="auth-subtitle">Enter your account details to continue and manage your orders</p>
+        <form id="login-form">
+          <div class="field">
+            <label for="login-email">Email Address</label>
+            <input class="input" id="login-email" type="email" name="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input class="input" id="login-password" type="password" name="password" minlength="8" required autocomplete="current-password" />
+          </div>
+          <button class="auth-submit" id="login-submit-btn" type="submit">Sign In</button>
+        </form>
+        <p class="auth-disclaimer">
+          By signing in, you agree to Matgari's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.
+        </p>
+      </div>
+
+      <div class="auth-switch-divider">
+        <span>New to Matgari?</span>
+      </div>
+
+      <a href="/register.html" class="auth-secondary-btn" id="create-account-link">
+        Create your Matgari account
+      </a>
+
+      <div class="auth-footer">
+        <p>© Matgari — Certified E-commerce Platform</p>
+      </div>
+    </div>
+    <script type="module" src="/js/pages/login.page.js"></script>
+  </body>
+</html>

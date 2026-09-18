@@ -1,0 +1,1 @@
+export function statusBadge(status) { const span = document.createElement('span'); span.className = `status status-${status || 'new'}`; span.textContent = ({ new: 'New', processing: 'Processing', delivered: 'Delivered', cancelled: 'Cancelled' })[status] || status || 'New'; return span; }
